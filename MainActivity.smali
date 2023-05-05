@@ -3323,10 +3323,8 @@
 .method public getExternalStoragePath()Ljava/lang/String;
     .locals 1
 
-    const/4 v0, 0x0
-
-    .line 1237
-    invoke-virtual {p0, v0}, Lcom/mojang/minecraftpe/MainActivity;->getExternalFilesDir(Ljava/lang/String;)Ljava/io/File;
+    .line 1189
+    invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
 
     move-result-object v0
 
@@ -3909,17 +3907,10 @@
 .end method
 
 .method public getInternalStoragePath()Ljava/lang/String;
-    .locals 2
+    .locals 1
 
-    .line 1312
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x18
-
-    if-lt v0, v1, :cond_0
-
-    .line 1313
-    invoke-virtual {p0}, Lcom/mojang/minecraftpe/MainActivity;->getDataDir()Ljava/io/File;
+    .line 1189
+    invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
 
     move-result-object v0
 
